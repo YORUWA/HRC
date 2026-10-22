@@ -293,3 +293,15 @@ a.s-team:hover{border-color:var(--blue);box-shadow:0 10px 26px rgba(16,40,58,.1)
 .s-chat a{display:inline-block;padding:7px 14px;border:1px solid rgba(255,255,255,.3);border-radius:999px;color:#fff;font-size:13px;font-weight:700;text-decoration:none;transition:background .15s}
 .s-chat a:hover{background:rgba(255,255,255,.14)}
 .s-chat a::after{content:" ↗";opacity:.6;font-weight:400}
+
+/* ── 인원 카드: 팀 소개글(.cr)을 모든 팀에서 같은 격자로 / 폰에서 임직원 카드 2열 ── */
+.s-docmain .hc .cr{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:14px}
+.s-docmain .hc .cr .cm{flex:none;min-width:0;width:auto;max-width:none}
+@media(max-width:760px){
+  .s-people{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+  .s-people .s-person .tx{padding:11px 12px 13px}
+  .s-people .s-person .pn{font-size:16px}
+  .s-people .s-person .pr{font-size:12px;line-height:1.4}
+  .s-people .s-person .pm{margin-top:9px;font-size:12px}
+  .s-people .s-next{left:7px;top:7px;font-size:10px;padding:4px 6px}
+}
