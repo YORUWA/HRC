@@ -183,8 +183,8 @@ a.s-team:hover{border-color:var(--blue);box-shadow:0 10px 26px rgba(16,40,58,.1)
 .s-group-h a{margin-left:auto;font-size:14px;font-weight:700;color:var(--blue);text-decoration:none}
 
 /* 소개글(.hc) 안에 덧붙이는 요소 — 내 클래스만 사용 */
-.s-teamlink{display:inline-block;margin-top:12px;padding:5px 14px;border-radius:999px;background:#3d6bd1;color:#fff !important;font-size:12px;font-weight:700;text-decoration:none;text-shadow:none !important}
-.s-teamlink:hover{background:#2f55ad}
+.s-teamlink{display:block;width:max-content;margin-top:16px;padding:5px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.34);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);color:#fff !important;font-size:12px;font-weight:700;text-decoration:none;text-shadow:none !important;transition:background .15s}
+.s-teamlink:hover{background:rgba(255,255,255,.26)}
 .hc .cm.s-linked{position:relative;cursor:pointer;transition:border-color .15s,box-shadow .15s}
 .hc .cm.s-linked:hover{border-color:#4f78d8;box-shadow:0 8px 22px #10283a1f}
 .s-cover{position:absolute;inset:0;z-index:3}
@@ -287,3 +287,10 @@ a.s-team:hover{border-color:var(--blue);box-shadow:0 10px 26px rgba(16,40,58,.1)
 .s-wrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .s-code{margin:0;padding:16px;background:#10283a;color:#e6eef4;font:13px/1.7 'Nanum Gothic Coding',monospace;white-space:pre-wrap;word-break:break-all}
 .s-steps{margin:0;padding-left:20px;line-height:1.9;font-size:14.5px;color:#2c3a45}
+
+/* 대화 링크 */
+.s-chat{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:22px}
+.s-chat b{font:700 11px/1 'Nanum Gothic Coding',monospace;letter-spacing:.14em;color:#8fb0c6;margin-right:6px}
+.s-chat a{display:inline-block;padding:7px 14px;border:1px solid rgba(255,255,255,.3);border-radius:999px;color:#fff;font-size:13px;font-weight:700;text-decoration:none;transition:background .15s}
+.s-chat a:hover{background:rgba(255,255,255,.14)}
+.s-chat a::after{content:" ↗";opacity:.6;font-weight:400}
