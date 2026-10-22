@@ -60,15 +60,22 @@
   if (board) {
     var html = posts.map(function (p) {
       var imgs = (p.images || []).map(function (u) {
-        return '<img src="' + esc(u) + '" alt="" loading="lazy">';
+        var src = /^(https?:)?\/\//.test(u) ? u : '../images/' + u;
+        return '<img src="' + esc(src) + '" alt="" loading="lazy">';
       }).join('');
+      var text = p.body || '';
+      if (text.indexOf('<') === -1) {
+        text = text.trim().split(/\n\s*\n/).map(function (para) {
+          return '<p>' + esc(para.trim()).replace(/\n/g, '<br>') + '</p>';
+        }).join('');
+      }
       return '<div class="s-post" id="p' + esc(p.id) + '" data-cat="' + esc(p.cat) + '">' +
         '<button type="button" class="s-post-row" aria-expanded="false">' +
         '<span class="no">' + esc(p.id) + '</span>' +
         '<span><span class="s-tag c-' + esc(p.cat) + '">' + esc(CATS[p.cat] || p.cat) + '</span></span>' +
         '<span class="ti">' + esc(p.title) + '</span>' +
         '<span class="dt">' + fmtDate(p.date) + '</span></button>' +
-        '<div class="s-post-body"><div class="tx">' + (p.body || '') + '</div>' +
+        '<div class="s-post-body"><div class="tx">' + text + '</div>' +
         (imgs ? '<figure>' + imgs + '</figure>' : '') + '</div></div>';
     }).join('');
     board.innerHTML = '<div class="s-board-h"><span>번호</span><span>분류</span><span>제목</span><span>작성일</span></div>' +

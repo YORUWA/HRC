@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>글 작성 도우미 | 현상대응컴퍼니</title>
+<meta name="description" content="게시판 글 작성 도우미">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="현상대응컴퍼니">
+<meta property="og:title" content="글 작성 도우미 | 현상대응컴퍼니">
+<meta property="og:description" content="게시판 글 작성 도우미">
+
+<meta name="theme-color" content="#10283a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2310283a'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'%3E%E7%8F%BE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard-dynamic-subset.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+<a class="s-skip" href="#main">본문으로 건너뛰기</a>
+<div class="s-util"><div class="s-in"><span>서울 본부 · 의뢰 상담 <span class="s-redact" role="img" aria-label="열람 제한" style="width:4em"></span>-<span class="s-redact" role="img" aria-label="열람 제한" style="width:4em"></span></span><span>가상 기업 설정 아카이브</span></div></div>
+<header class="s-header"><div class="s-in">
+<a class="s-logo" href="../../"><span class="s-mark" aria-hidden="true">現</span><span class="s-wm"><b>현상대응컴퍼니</b><small>Hyunsang Response Company</small></span></a>
+<nav class="s-nav" aria-label="주 메뉴"><a href="../../company/">회사 소개</a><a href="../../org/">조직도</a><a href="../../people/">임직원</a><a href="../../board/" aria-current="page">게시판</a></nav>
+</div></header>
+<main id="main">
+<section class="s-pagehead"><div class="s-in"><h1>글 작성 도우미</h1><p>입력한 내용을 posts.js에 붙여넣을 글 블록으로 바꿔 줍니다. 이 페이지는 메뉴에 나오지 않아요.</p></div></section>
+<div class="s-in s-write">
+<label>제목<input id="w-title" type="text" placeholder="제목"></label>
+<div class="s-wrow"><label>분류<select id="w-cat"><option value="bside">B컷</option><option value="lore">설정</option><option value="chat">잡담</option><option value="notice">공지</option></select></label>
+<label>작성일<input id="w-date" type="date"></label></div>
+<label>본문 (줄바꿈만 하면 문단이 나뉘어요)<textarea id="w-body" rows="8"></textarea></label>
+<label>이미지 파일 (images 폴더에 올릴 사진을 고르면 파일 이름이 채워져요. 주소가 있으면 한 줄에 하나씩 직접 적어도 돼요)<input id="w-files" type="file" accept="image/*" multiple></label>
+<textarea id="w-imgs" rows="3" placeholder="b01.webp"></textarea>
+<button type="button" class="s-btn s-btn-d" id="w-make">글 블록 만들기</button>
+<pre id="w-out" class="s-code" hidden></pre>
+<button type="button" class="s-btn s-btn-l" id="w-copy" hidden>복사하기</button>
+<ol class="s-steps"><li>사진을 쓴다면 GitHub의 <b>images</b> 폴더에 같은 이름으로 올려요.</li><li><b>assets/posts.js</b>를 열고 연필 아이콘을 눌러요.</li><li><code>window.HRC_POSTS = [</code> 바로 아래 줄에 복사한 블록을 붙여넣고 Commit해요.</li></ol>
+</div>
+</main>
+<footer class="s-footer"><div class="s-in">
+<div><a class="s-logo" href="../../"><span class="s-mark" aria-hidden="true">現</span><span class="s-wm"><b>현상대응컴퍼니</b><small>Hyunsang Response Company</small></span></a>
+<p>현상대응컴퍼니는 창작된 가상의 기업이며, 실존하는 기업·단체와 관련이 없습니다.<br>사업자등록번호 <span class="s-redact" role="img" aria-label="열람 제한" style="width:3em"></span>-<span class="s-redact" role="img" aria-label="열람 제한" style="width:2em"></span>-<span class="s-redact" role="img" aria-label="열람 제한" style="width:5em"></span></p></div>
+<nav aria-label="바로가기"><a href="../../company/">회사 소개</a><a href="../../org/">조직도</a><a href="../../people/">임직원</a><a href="../../board/">게시판</a></nav>
+<div class="s-copy">© YORUWA · 현상대응컴퍼니 공식 아카이브</div>
+</div></footer>
+<script src="../../assets/posts.js"></script>
+<script src="../../assets/site.js"></script>
+<script src="../../assets/write.js"></script>
+</body>
+</html>
