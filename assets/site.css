@@ -305,3 +305,5 @@ a.s-team:hover{border-color:var(--blue);box-shadow:0 10px 26px rgba(16,40,58,.1)
   .s-people .s-person .pm{margin-top:9px;font-size:12px}
   .s-people .s-next{left:7px;top:7px;font-size:10px;padding:4px 6px}
 }
+
+.s-floor .n small.in{display:inline;margin-left:8px;font-size:14px;font-weight:500;color:var(--muted)}
