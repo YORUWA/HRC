@@ -142,14 +142,6 @@
 .hc .eyb{font-family:'Nanum Gothic Coding','Courier New',monospace;font-size:11px;letter-spacing:.18em;color:#66818c;margin-bottom:8px}
 .hc .tt{font-size:25px;font-weight:900;letter-spacing:-.04em;color:#18212b}
 .hc .lead{margin:10px 0 0;font-size:14px;color:#4f5c66;max-width:680px}
-.hc .menu{margin-top:18px;border:1px solid #d8e1e6;border-radius:15px;background:#fff;overflow:hidden}
-.hc .menu .hd{display:flex;justify-content:space-between;padding:10px 14px;background:#17222b;color:#edf3f5;font-size:10px;font-weight:800}
-.hc .menu .hd span{font-size:9px;color:#92aab3}
-.hc .menu .it{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid #e4eaed}
-.hc .menu .it:last-child{border:0}
-.hc .menu .it i{flex:0 0 32px;height:32px;border-radius:9px;background:#eef3f5;display:flex;align-items:center;justify-content:center;font-size:16px;font-style:normal}
-.hc .menu .it b{display:block;font-size:13px;font-weight:900;color:#25404a}
-.hc .menu .it span{display:block;margin-top:2px;font-size:11px;color:#667780}
 .hc .idc{max-width:400px;margin:20px auto 0;border-radius:16px;overflow:hidden;border:1px solid #cdd8de;box-shadow:0 10px 24px #0f172a1f;background:#fff;position:relative}
 .hc .idc .slot{position:absolute;left:50%;top:6px;width:46px;height:8px;margin-left:-23px;border-radius:99px;background:#0b1217;opacity:.55;z-index:2}
 .hc .idc .hd{display:flex;align-items:center;justify-content:space-between;padding:20px 15px 11px;background:linear-gradient(135deg,#17222b,#25343e);color:#eef4f6}
@@ -186,6 +178,20 @@
 .hc .models{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
 .hc .models span{padding:9px 14px;border:1px solid #435862;border-radius:12px;background:linear-gradient(160deg,#39525f,#1b262e);font-size:12px;font-weight:800;color:#f2f7f8}
 .hc .end{margin:10px 30px 0;padding:26px 0 30px;text-align:center;color:#9aa8b0;font-size:10px;letter-spacing:.2em;border-top:1px solid #e1e7eb}
+.hc .menu{margin-top:18px;border:1px solid #d8e1e6;border-radius:15px;background:#fff;overflow:hidden}
+.hc .menu .hd{display:flex;justify-content:space-between;padding:10px 14px;background:#17222b;color:#edf3f5;font-size:10px;font-weight:800}
+.hc .menu .hd span{font-size:9px;color:#92aab3}
+.hc .menu .hd .r{display:flex;align-items:center;gap:12px}
+.hc .menu .hd .jx{width:34px;text-align:center;color:#7fd0c4;letter-spacing:.08em}
+.hc .menu .it{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid #e4eaed}
+.hc .menu .it:last-child{border:0}
+.hc .menu .it i{flex:0 0 32px;height:32px;border-radius:9px;background:#eef3f5;display:flex;align-items:center;justify-content:center;font-size:16px;font-style:normal}
+.hc .menu .it b{display:block;font-size:13.5px;font-weight:700;color:#25404a}
+.hc .menu .it .tx{flex:1;min-width:0}
+.hc .menu .it .ck{flex:0 0 34px;display:flex;align-items:center;justify-content:center}
+.hc .menu .it .ck s{text-decoration:none;display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:6px;border:1.5px solid #cfdae0;background:#f6f9fa;color:transparent;font-size:12px;font-weight:900}
+.hc .menu .it .ck s.on{border-color:#2f8f8a;background:#2f8f8a;color:#fff}
+.hc .menu .it span{display:block;margin-top:2px;font-size:11px;color:#667780}
 </style>
 <div class="hc"><div class="sec" id="profile">
 <div class="eyb">EMPLOYEE FILE</div>
@@ -289,14 +295,14 @@
 </div><div class="sec" id="commands">
 <div class="eyb">HRC / INTERNAL PROGRAM</div>
 <div class="tt" style="font-size:21px">사내 프로그램 메뉴</div>
-<p class="lead" style="font-size:12px;color:#71818a">채팅 중 아래 명령어를 입력하면 원하는 방식으로 콘텐츠를 불러올 수 있어요.</p>
+<p class="lead" style="font-size:12px;color:#71818a">※ 채팅 중 아래 명령어를 입력하면 해당 기능을 이용할 수 있습니다.</p>
 <div class="menu">
-<div class="hd">HRC QUICK MENU<span class="mono">v1.0</span></div>
-<div class="it"><i>🎲</i><div><b class="mono">!업무</b><span>랜덤한 업무·소동 발생! 오늘도 칼퇴는 글렀다(?)</span></div></div>
-<div class="it"><i>📥</i><div><b class="mono">!인계함</b><span>타 부서에서 넘어온 업무를 확인하고 골라 진행해보기</span></div></div>
-<div class="it"><i>🌳</i><div><b class="mono">!현대숲</b><span>현상대응컴퍼니 대나무숲을 구경하고 익명으로 글·댓글 써보기</span></div></div>
-<div class="it"><i>📸</i><div><b class="mono">!현대픽</b><span>캐릭터의 SNS를 구경하고 뜻밖의 일상 엿보기</span></div></div>
-<div class="it"><i>📅</i><div><b class="mono">!캘린더</b><span>랜덤한 사내 일정·일상 이벤트 중 하나를 골라 이야기 이어가기</span></div></div>
+<div class="hd">HRC QUICK MENU<div class="r"><span class="mono">v1.0</span><span class="mono jx">JSX</span></div></div>
+<div class="it"><i>🎲</i><div class="tx"><b>!업무</b><span>랜덤한 업무·소동 발생! 오늘도 칼퇴는 글렀다(?)</span></div><div class="ck"><s>✓</s></div></div>
+<div class="it"><i>📥</i><div class="tx"><b>!인계함</b><span>타 부서에서 넘어온 업무를 확인하고 골라 진행해보기</span></div><div class="ck"><s class="on">✓</s></div></div>
+<div class="it"><i>🌳</i><div class="tx"><b>!현대숲</b><span>현상대응컴퍼니 대나무숲을 구경하고 익명으로 글·댓글 써보기</span></div><div class="ck"><s class="on">✓</s></div></div>
+<div class="it"><i>📸</i><div class="tx"><b>!현대픽</b><span>캐릭터의 SNS를 구경하고 뜻밖의 일상 엿보기</span></div><div class="ck"><s class="on">✓</s></div></div>
+<div class="it"><i>📅</i><div class="tx"><b>!캘린더</b><span>랜덤한 사내 일정·일상 이벤트 중 하나를 골라 이야기 이어가기</span></div><div class="ck"><s class="on">✓</s></div></div>
 </div>
 </div><div class="end mono">END OF FILE · HRC ANOMALY ARCHIVE</div></div><section class="s-after"><h2>사후처리팀 인원</h2><div class="s-people s-people-sm"><a class="s-person" href="../../people/ma/"><span class="ph"><img src="../../images/21.webp" alt="마규진" loading="lazy"></span><span class="tx"><span class="pn">마규진</span><span class="pr">사후처리팀 · 팀장 · 정산반</span><span class="pm">인사기록 보기</span></span></a><a class="s-person is-plain" href="../../org/aftermath/#members"><span class="ph"><img src="../../images/22.webp" alt="배시영" loading="lazy"></span><span class="tx"><span class="pn">배시영</span><span class="pr">사후처리팀 · 현장반</span><span class="pm">팀 페이지에서 보기</span></span></a><a class="s-person is-plain" href="../../org/aftermath/#members"><span class="ph"><img src="../../images/23.webp" alt="육지덕" loading="lazy"></span><span class="tx"><span class="pn">육지덕</span><span class="pr">사후처리팀 · 현장반</span><span class="pm">팀 페이지에서 보기</span></span></a></div><a class="s-btn s-btn-d" href="../../org/aftermath/">사후처리팀 페이지 보기</a></section></div></div>
 </main>
