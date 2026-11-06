@@ -307,3 +307,16 @@ a.s-team:hover{border-color:var(--blue);box-shadow:0 10px 26px rgba(16,40,58,.1)
 }
 
 .s-floor .n small.in{display:inline;margin-left:8px;font-size:14px;font-weight:500;color:var(--muted)}
+
+/* 인트로(훅) 블록과 프로필 사이 간격 */
+.s-docmain .hc.pro{margin-bottom:32px}
+/* 임직원 명부의 NEXT 빈자리 */
+.s-person.is-empty{cursor:default}
+.s-person.is-empty:hover{border-color:var(--line);box-shadow:none}
+.s-person.is-empty .ph{background:linear-gradient(180deg,#e6ecf0,#d3dce3)}
+.s-person.is-empty .sil{position:absolute;left:50%;bottom:0;width:62%;transform:translateX(-50%);fill:#b9c6cf}
+.s-person.is-empty .pn{color:#8a9aa5;letter-spacing:.08em}
+
+/* 첫 화면 설명: 문장 단위 줄바꿈이 어색하게 꺾이지 않도록 */
+.s-two>div>.s-lead{max-width:none;word-break:keep-all}
+@media(min-width:900px){.s-two{grid-template-columns:minmax(0,6.6fr) minmax(0,5.4fr);gap:56px}}

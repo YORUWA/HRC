@@ -106,6 +106,7 @@
 .hc .cm{border:1px solid #d6dfe4;border-radius:17px;background:#fff;overflow:hidden}
 .hc .cm .top{display:flex;flex-wrap:wrap;gap:16px;padding:16px}
 .hc .cm .im{flex:0 0 132px;height:168px;border-radius:12px;background-size:cover;background-position:center;border:1px solid #dbe2e6}
+.hc .pp .p2{opacity:0;transition:opacity .12s}.hc .pp input:checked~.p2{opacity:1}@media(hover:hover){.hc .pp:hover .p2{opacity:1}}
 .hc .cm .tx{flex:1 1 160px;min-width:160px}
 .hc .cm .tx small{font-family:'Nanum Gothic Coding','Courier New',monospace;font-size:9px;letter-spacing:.13em;color:#82959e}
 .hc .cm .tx b{display:block;font-size:20px;font-weight:900;margin-top:2px}
@@ -133,14 +134,31 @@
 @media(max-width:560px){.hc .nts{grid-template-columns:118px 1fr 118px}.hc .note{font-size:10px}}
 .hc .teamhero .tm{position:absolute;right:30px;top:27px;z-index:2;padding:4px 12px;font-family:'Nanum Gothic Coding','Courier New',monospace;font-size:10px;font-weight:700;letter-spacing:.08em;color:#17222b;text-decoration:none;white-space:nowrap;background:#ffffffd9;border:1px solid #ffffff;border-radius:999px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);box-shadow:0 3px 12px #0004}
 @media(max-width:520px){.hc .teamhero .t .df{display:none}.hc .teamhero .tm{right:20px}}
+.hc details.sc{margin:20px 0 0;border:1px solid #efc3c8;border-radius:13px;background:#fff6f7;overflow:hidden}
+.hc details.sc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
+.hc details.sc>summary::-webkit-details-marker{display:none}
+.hc .sc small{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;color:#d1495b}
+.hc .sc .sb{margin-left:8px;font-size:12px;font-weight:700;letter-spacing:0;color:#8f5a60}
+.hc .sc .cv{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:#fde4e7;display:flex;align-items:center;justify-content:center}
+.hc .sc .cv::after{content:"";display:block;width:7px;height:7px;border:solid #d1495b;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-3px}
+.hc .sc[open] .cv{transform:rotate(180deg)}
+.hc .sc .bd2{margin:0;padding:0 14px 14px;font-size:13px;line-height:1.8;color:#53616a}
+.hc .sc .bd2 p{margin:8px 0 0}
+.hc .sc .bd2 b{color:#24373e}
+.hc .mw{max-width:70%;display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.hc .mw.me{align-items:flex-end}
+.hc .mw .b{max-width:100%}
+.hc .nl{font-size:9px;color:#8a98a1;margin-left:2px;line-height:1.4}
+.hc .mw.me .nl{margin:0 2px 0 0}
 </style>
-<div class="hc"><div id="hero" style="position:relative;overflow:hidden;background-color:#2b3a44;background-image:url(../../images/18.webp);background-size:cover;background-position:center top">
+<div class="hc"><div id="hero" style="position:relative;overflow:hidden;background-color:#2b3a44">
+<div style="position:absolute;top:0;bottom:0;left:-2.42%;right:0;background-image:url(../../images/18.webp);background-size:cover;background-position:51.18% top"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(180deg,#0d151b88 0%,#0d151b33 28%,#0d151b44 55%,#f7f9fb70 72%,#f7f9fbd0 88%,#f7f9fb 100%)"></div>
 <div class="teamhero">
 <div class="t"><div class="eb">SEOUL HQ · 06F<span class="df"> / DEPARTMENT FILE</span></div><h2>사후처리팀</h2><div class="mono" style="font-size:12px;letter-spacing:.18em;color:#d3e2e5;margin-top:1px">AFTERMATH TEAM</div></div>
 <a class="tm" href="https://youtu.be/mG_hB-aaF3s?si=QLXdHaQcyxQkcLUq" rel="noopener" target="_blank">♪ TEAM ▶</a>
 <div class="nts">
-<div class="note n1 cb"><div class="pp"><div class="hdr"><b>작업지시서</b><span class="c">NO.0231</span></div><div class="k on">현장 철수 확인</div><div class="k on">잔해 회수</div><div class="k">소파 3개 분해 반출</div><span class="scr">작업 끝나고 치맥 ㄱ?<br/>- 자비로운 찬양님♡</span></div></div>
+<div class="note n1 cb"><div class="pp"><div class="hdr"><b>작업지시서</b><span class="c">NO.0231</span></div><div class="k on">현장 철수 확인</div><div class="k on">잔해 회수</div><div class="k">소파 3개 분해 반출</div><span class="scr">치맥 영수증 첨부 필수.<br/>- 마규진</span></div></div>
 <div class="note n2 rc"><div class="h">HRC 사후처리팀<br/>정산 영수증</div><div class="dl"></div><div class="r"><span>삼각김밥</span><span>1,800</span></div><div class="r"><span>증빙</span><span>없음</span></div><div class="dl"></div><div class="r tot"><span>합계</span><span class="cir">1,800</span></div><div class="stp">반려</div><span class="scr" style="margin-left:14px">또 너냐.</span><div class="dl"></div><div style="font-size:9px;color:#80878b">사유: 증빙 불충분</div></div>
 <div class="note n3 tg"><div class="in"><div class="c">DISPOSAL TAG</div><b>폐기 대기</b><p>오염된 소파 세 개. 엘리베이터엔 안 들어감.</p><div class="ft">분해 후 반출 예정</div></div></div>
 <div class="note n4 rc zz" style="--p:#f3f5f1"><div class="h">도배 외주<br/>견적서</div><div class="dl"></div><div class="r"><span>1차</span><span>1,200,000</span></div><div class="r"><span>2차</span><span><s>1,450,000</s></span></div><div class="dl"></div><div class="r tot"><span>합계</span><span class="cir">??</span></div><div class="stp b">미정산</div><span class="scr">금액이 다릅니다.<br/>재확인 필요.</span><div class="dl"></div><div style="font-size:9px;color:#80878b">재확인 요청 · 3회차</div></div>
@@ -152,10 +170,11 @@
 <div style="font-size:22px;font-weight:800;letter-spacing:-.03em;margin-bottom:12px">사건이 끝난 뒤에야 시작되는 부서</div>
 <div style="margin-bottom:20px"><span style="display:inline-block;margin:0 6px 6px 0;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;background:#edf2ff;color:#4f78d8">🧹 현장 복구·회수·폐기</span><span style="display:inline-block;margin:0 6px 6px 0;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;background:#fbeaea;color:#b0524f">🧾 비용·영수증 정산</span></div>
 <p>타팀이 괴이현상을 처리하고 철수하면 사건은 끝난 것처럼 보인다. 하지만 부서진 벽, 오염된 바닥, 회수하지 못한 잔해와 아직 결제되지 않은 비용은 현장에 그대로 남는다. 이 뒷수습을 넘겨받아 사건을 <b style="color:#18212b">'없었던 일'</b>로 되돌리는 곳이 사후처리팀이다.</p>
-<p>팀은 현장에 남은 것을 치우는 <span style="color:#4f78d8;font-weight:800">현장반</span>과 장부에 남은 것을 치우는 <span style="color:#b0524f;font-weight:800">정산반</span>으로 나뉜다. 현장반은 "일단 해결하고 보자", 정산반은 "그 돈은 어디서 낼 건데". 반려와 재작업으로 하루가 멀다 하고 다투지만, 남이 건드리면 제 식구라며 감싸는 거친 형제자매 같은 사이다.</p>
-<p>성공할수록 티가 안 나는 일이라 알아주는 사람은 별로 없다. 그래도 이들의 뒷정리가 끝나야 비로소 사건도 완전히 마무리된다. 이 팀은 <b style="color:#18212b;background:linear-gradient(transparent 58%,#ffd3d8 58%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 2px">철거 업체와 경리팀이 한 지붕 아래 사는 풍경</b>에 가깝다.</p>
-</div><div class="sec" id="members"><div class="eyb">PERSONNEL DIRECTORY</div><div class="tt">사후처리팀 인원</div><div class="cr"><div class="cm s-nextcard"><div class="top"><div class="im" style="background-image:linear-gradient(180deg,#ffffff10,#17222b38),url(../../images/21.webp)"></div><div class="tx"><small>TEAM LEADER</small><b>마규진</b><div class="sub">33세 · 男 · 사후처리팀 정산반</div><p>정산반을 중심으로 사후처리팀 전체를 관리하는 팀장. 영수증 한 장도 그냥 안 넘어가는 일명 '마귀'. '마귀진'.</p>
-<div class="pl"><i class="gB">감응 B</i><i class="gB">간파 B</i><i class="gA">내성 A</i><i class="gD">인력 D</i></div></div></div><span class="s-next">NEXT</span></div><div class="cm s-linked"><div class="top"><div class="im" style="background-image:linear-gradient(180deg,#ffffff10,#17222b38),url(../../images/20.webp)"></div><div class="tx"><small>EMPLOYEE</small><b>금찬양</b><div class="sub">24세 · 男 · 사후처리팀 현장반</div><p>머리 나쁜데 사고 치는 데는 천재적인 놈.</p><div class="pl"><i class="gD">감응 D</i><i class="gD">간파 D</i><i class="gA">내성 A</i><i class="gB">인력 B</i></div><span class="s-go">인사기록 보기</span></div></div><a aria-label="금찬양 인사기록 보기" class="s-cover" href="../../people/geum/"></a></div><div class="cm"><div class="top"><div class="im" style="background-image:linear-gradient(180deg,#ffffff10,#17222b38),url(../../images/22.webp)"></div><div class="tx"><small>EMPLOYEE</small><b>배시영</b><div class="sub">24세 · 男 · 사후처리팀 현장반</div><p>문신에 자유분방한 행실까지, 현장반의 험악한 이미지에 일조한 또 다른 주범.</p>
+<p>일처리가 완벽할수록 흔적이 남지 않는 법. 이들의 뒷정리가 끝나야 비로소 사건도 완전히 마무리된다.</p>
+<p>팀은 현장에 남은 것을 치우는 <span style="color:#4f78d8;font-weight:800">현장반</span>과 장부에 남은 것을 치우는 <span style="color:#b0524f;font-weight:800">정산반</span>으로 나뉜다. 현장반은 "일단 해결하고 보자", 정산반은 "그 돈은 어디서 낼 건데". 반려와 재작업으로 하루가 멀다 하고 다투지만, 남이 건드리면 제 식구라며 감싸는 거친 형제자매 같은 사이다. 한마디로, <b style="color:#18212b;background:linear-gradient(transparent 58%,#ffd3d8 58%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 2px">철거 업체와 경리팀이 한 지붕 아래 사는 풍경</b>에 가깝다.</p>
+</div><div class="sec" id="members"><div class="eyb">PERSONNEL DIRECTORY</div><div class="tt">사후처리팀 인원</div><div class="cr"><div class="cm s-linked"><div class="top"><div class="im" style="background-image:linear-gradient(180deg,#ffffff10,#17222b38),url(../../images/21.webp)"></div><div class="tx"><small>TEAM LEADER</small><b>마규진</b><div class="sub">33세 · 男 · 사후처리팀 정산반</div><p>정산반을 중심으로 사후처리팀 전체를 관리하는 팀장. 영수증 한 장도 그냥 안 넘어가는 일명 '마귀'. '마귀진'.</p>
+<div class="pl"><i class="gB">감응 B</i><i class="gB">간파 B</i><i class="gA">내성 A</i><i class="gD">인력 D</i></div><span class="s-go">인사기록 보기</span></div></div><a aria-label="마규진 인사기록 보기" class="s-cover" href="../../people/ma/"></a></div><div class="cm s-linked"><div class="top"><div class="im" style="background-image:linear-gradient(180deg,#ffffff10,#17222b38),url(../../images/24.webp)"></div><div class="tx"><small>EMPLOYEE</small><b>금찬양</b><div class="sub">24세 · 男 · 사후처리팀 현장반</div><p>낯짝 두껍고 껄렁한 사고뭉치. 마 팀장의 두통 유발 요인 중 하나.</p>
+<div class="pl"><i class="gD">감응 D</i><i class="gD">간파 D</i><i class="gA">내성 A</i><i class="gB">인력 B</i></div><span class="s-go">인사기록 보기</span></div></div><a aria-label="금찬양 인사기록 보기" class="s-cover" href="../../people/geum/"></a></div><div class="cm"><div class="top"><div class="im" style="background-image:linear-gradient(180deg,#ffffff10,#17222b38),url(../../images/22.webp)"></div><div class="tx"><small>EMPLOYEE</small><b>배시영</b><div class="sub">24세 · 男 · 사후처리팀 현장반</div><p>문신에 자유분방한 행실까지, 현장반의 험악한 이미지에 일조한 또 다른 주범.</p>
 <div class="pl"><i class="gB">감응 B</i><i class="gD">간파 D</i><i class="gA">내성 A</i><i class="gD">인력 D</i></div></div></div></div><div class="cm"><div class="top"><div class="im" style="background-image:linear-gradient(180deg,#ffffff10,#17222b38),url(../../images/23.webp)"></div><div class="tx"><small>EMPLOYEE</small><b>육지덕</b><div class="sub">21세 · 男 · 사후처리팀 현장반</div><p>현장반만은 피하고 싶었건만, 하필 현장반에 배정되고 만 굼뜬 막내... 소심해도 열심히는 합니다.</p>
 <div class="pl"><i class="gD">감응 D</i><i class="gD">간파 D</i><i class="gB">내성 B</i><i class="gD">인력 D</i></div></div></div></div></div></div></div></div></div>
 </main>

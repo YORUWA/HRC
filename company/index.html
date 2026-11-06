@@ -101,6 +101,10 @@
 .hc details.bld{margin-top:22px;border:1px solid #d7dfe5;border-radius:17px;overflow:hidden;background:#fff}
 .hc details.bld>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:#17222b;color:#edf3f6}
 .hc details.bld>summary::-webkit-details-marker{display:none}
+.hc details.bld>summary .bt{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;min-width:0;text-align:left}
+.hc details.bld>summary .bt b,.hc details.bld>summary .bt span{white-space:nowrap;text-align:left}
+.hc details.bld>summary .bt span{font-size:10px;color:#9caeba}
+.hc details.bld>summary .r{flex:0 0 auto;white-space:nowrap;margin-left:10px}
 .hc details.bld>summary .r{display:flex;align-items:center;gap:10px;font-size:10px;color:#68d7a9}
 .hc details.bld>summary .r::after{content:"⌄";font-size:16px;color:#9caeba}
 .hc details.bld[open]>summary .r::after{transform:rotate(180deg)}
@@ -119,7 +123,7 @@
 <div id="world" style="position:relative;overflow:hidden;background-image:url('../images/1.webp');background-size:cover;background-position:center top;background-color:#1b2730">
 <div style="position:absolute;inset:0;background:linear-gradient(180deg,#0810182e 0%,#0810183d 20%,#08101899 30%,#081018bb 42%,#081018c4 70%,#08101866 100%)"></div>
 <div style="position:absolute;left:0;right:0;bottom:0;height:300px;background:linear-gradient(180deg,#f7f9fb00 0%,#f7f9fb0d 12%,#f7f9fb33 28%,#f7f9fb70 46%,#f7f9fbb0 64%,#f7f9fbdf 82%,#f7f9fbf5 93%,#f7f9fb 100%)"></div>
-<div style="position:absolute;right:26px;top:24px;transform:rotate(-9deg);border:3px double #c0392bcc;border-radius:6px;padding:5px 11px;font-family:monospace;font-weight:900;font-size:12px;letter-spacing:.13em;color:#e2564aee;background:#c0392b4d">1급 기밀</div>
+<div style="position:absolute;right:26px;top:24px;transform:rotate(-9deg);border:3px double #c0392bcc;border-radius:6px;padding:5px 11px;font-family:monospace;font-weight:900;font-size:12px;letter-spacing:.13em;color:#e2564aee;background:#c0392b4d">對外秘</div>
 <div style="position:relative;padding:34px 30px 0">
 <div style="font-family:monospace;font-size:11px;letter-spacing:.18em;color:#d3e8e6;text-shadow:0 0 4px #000">01 / ANOMALOUS PHENOMENA</div>
 <div style="margin-top:9px;font-size:34px;font-weight:900;letter-spacing:-.045em;color:#fff;text-shadow:0 2px 14px #0008">괴이현상</div>
@@ -194,7 +198,7 @@
 <div class="dd">일반 부상부터 괴이현상으로 인한 각종 피해·후유증까지 검사·응급처치한다. 특수한 괴이성 증상은 특수분석팀과 협력한다.</div></details>
 </div>
 <details class="bld">
-<summary><div><b>HRC SEOUL HQ</b><span style="font-size:10px;color:#9caeba;margin-left:8px">BUILDING DIRECTORY</span></div><div class="r">● ACTIVE</div></summary>
+<summary><div class="bt"><b>HRC SEOUL HQ</b><span>BUILDING DIRECTORY</span></div><div class="r">● ACTIVE</div></summary>
 <div class="dir">
 <div><b>ROOF</b>흡연구역</div>
 <div><b>10F</b>본부장실 · 대회의실 · 감사실</div>
