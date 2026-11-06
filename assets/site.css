@@ -320,3 +320,15 @@ a.s-team:hover{border-color:var(--blue);box-shadow:0 10px 26px rgba(16,40,58,.1)
 /* 첫 화면 설명: 문장 단위 줄바꿈이 어색하게 꺾이지 않도록 */
 .s-two>div>.s-lead{max-width:none;word-break:keep-all}
 @media(min-width:900px){.s-two{grid-template-columns:minmax(0,6.6fr) minmax(0,5.4fr);gap:56px}}
+
+/* 프로필 / 인트로 선택 */
+.s-tabs{display:flex;gap:8px;margin:0 0 22px}
+.s-tabs button{font:inherit;font-size:15px;font-weight:700;padding:11px 20px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer;border-radius:999px;transition:background .15s,color .15s,border-color .15s}
+.s-tabs button:hover{color:var(--ink);border-color:var(--ink)}
+.s-tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.s-tabs button.is-hot[aria-selected="false"]{border-color:#e3b3b6;color:#b83a42;background:#fff7f7}
+.s-tabs button.is-hot[aria-selected="false"] span{display:inline-block;animation:s-pulse 1.8s ease-in-out infinite}
+@keyframes s-pulse{50%{transform:scale(1.18)}}
+.s-tabpanel[hidden],.s-toc li[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.s-tabs button.is-hot span{animation:none!important}}
+@media(max-width:560px){.s-tabs button{flex:1 1 0;padding:11px 8px;font-size:14px}}

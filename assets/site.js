@@ -13,7 +13,7 @@
       var line = window.innerHeight * 0.28;
       var current = -1;
       for (var i = 0; i < targets.length; i++) {
-        if (targets[i] && targets[i].getBoundingClientRect().top <= line) current = i;
+        if (targets[i] && targets[i].offsetParent !== null && targets[i].getBoundingClientRect().top <= line) current = i;
       }
       links.forEach(function (a, i) { a.classList.toggle('is-on', i === current); });
       var on = toc.querySelector('a.is-on');
@@ -27,6 +27,31 @@
     }, { passive: true });
     window.addEventListener('resize', update);
     update();
+  }
+
+  /* 1-b) 프로필 / 인트로 탭 */
+  var tabBar = document.querySelector('.s-tabs');
+  if (tabBar) {
+    var btns = Array.prototype.slice.call(tabBar.querySelectorAll('[data-tab]'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.s-tabpanel'));
+    var tocItems = Array.prototype.slice.call(document.querySelectorAll('.s-toc li[data-tab]'));
+    var show = function (name, scroll) {
+      btns.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-tab') === name ? 'true' : 'false'); });
+      panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== name; });
+      tocItems.forEach(function (li) { li.hidden = li.getAttribute('data-tab') !== name; });
+      if (scroll) window.scrollTo({ top: Math.max(0, tabBar.getBoundingClientRect().top + window.pageYOffset - (window.matchMedia("(max-width:1100px)").matches ? 200 : 110)), behavior: 'auto' });
+      window.dispatchEvent(new Event('resize'));
+    };
+    btns.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-tab'), true); }); });
+    var fromHash = function () {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var el = id && document.getElementById(id);
+      var p = el && el.closest('.s-tabpanel');
+      if (p) { show(p.getAttribute('data-panel'), false); el.scrollIntoView(); }
+    };
+    window.addEventListener('hashchange', fromHash);
+    show('profile', false);
+    fromHash();
   }
 
   /* 2) 게시판 */
