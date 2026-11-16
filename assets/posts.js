@@ -212,5 +212,126 @@ window.HRC_POSTS = [
    }
   ],
   "body": "<h4>추석</h4><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><p>&lt;공팀장&gt;</p>\n<figure class=\"gal gal-sq gal-c3\"><img src=\"../images/board/003-mwjlu8jy5xf.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy1qq.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy242.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy7n8.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy3jk.webp\" alt=\"\" loading=\"lazy\"></figure>\n<div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><p>&lt;안선생&gt;</p>\n<figure class=\"gal gal-sq gal-c3\"><img src=\"../images/board/003-mwjlu8jy4u5.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy4em.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy5k7.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy1v.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jykh.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy2cj.webp\" alt=\"\" loading=\"lazy\"></figure>\n<div class=\"gap\"></div><div class=\"gap\"></div><hr><h4>할로윈</h4><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><p>&lt;공팀장&gt;</p>\n<figure class=\"gal gal-sq gal-c3\"><img src=\"../images/board/003-mwjlu8jy64x.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jywq.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy38m.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy1bp.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy4ec.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jyui.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy688.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>혈액팩으로 끼니 해결하는 뱀파이어🧛🩸🩸</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><p>&lt;안선생&gt;</p>\n<figure class=\"gal gal-sq gal-c3\"><img src=\"../images/board/003-mwjlu8jy6ad.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy44n.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy7id.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy2pc.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy74t.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy2ui.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>신부랑 소악마 컨셉ㅎ.ㅎ///</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n<figure class=\"gal gal-sq gal-c2\"><img src=\"../images/board/003-mwjlu8jy69a.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy7c.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>원래는 둘이 천사랑 악마로 뽑아보다가 몬가 웃겨서 다시 뽑았던 기억이...</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><p>&lt;찬양이♡&gt;</p>\n<figure class=\"gal gal-sq gal-c2\"><img src=\"../images/board/003-mwjlu8jydb.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/003-mwjlu8jy51b.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>아우우우우우~~~~~~~~~~~~~~~~~🐺<br>찬양이는 마음에 드는 에셋을 금방 얻어서 올릴만한 게 두 장 뿐이지만 참 마음에 듭니다ㅍvㅍ</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><hr><p>이상입니다. (정색)</p>"
+ },
+ {
+  "id": "004",
+  "date": "2026-11-15",
+  "cat": "bside",
+  "title": "너굴태와 봉돌안돌 ~생활안전팀~",
+  "images": [],
+  "blocks": [
+   {
+    "t": "text",
+    "v": "안녕하세요? 티팟 5k기념 공팀장님 에셋을 뽑아보았는데요\n\n뽑기 전에 이 아저씨는 어떤 동물을 닮았을까 생각하다가...... 🦝 << !\n\n\n\n\n"
+   },
+   {
+    "t": "img",
+    "items": [
+     {
+      "src": "images/board/004-mwjm6abf460.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf41u.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf6ld.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf6az.webp"
+     }
+    ],
+    "layout": "grid"
+   },
+   {
+    "t": "text",
+    "v": "뽑다보니 뭔가 동숲 너굴사장이 떠올라서 얼레. 어라라. 하고 옷이랑 넥타이를 나뭇잎처럼... \n\n\n\n\n\n"
+   },
+   {
+    "t": "img",
+    "items": [
+     {
+      "src": "images/board/004-mwjm6abf26p.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf1zd.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf6lh.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf5bn.webp"
+     }
+    ],
+    "layout": "grid"
+   },
+   {
+    "t": "text",
+    "v": "뽑다보니 뭔가 콩돌밤돌이 떠올랐는데 마침 시현이 봉팔이가 두 마리라서 고런 느낌으로 같이 뽑아보고......\n\n\n\n\n\n"
+   },
+   {
+    "t": "img",
+    "items": [
+     {
+      "src": "images/board/004-mwjm6abf7mz.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf1dq.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf783.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf74v.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf58o.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf575.webp"
+     }
+    ],
+    "layout": "grid"
+   },
+   {
+    "t": "text",
+    "v": "뽑다보니 또 아예 너굴사장처럼 이것저것 뽑아보다가.........(???)\n\n\n\n\n\n\n"
+   },
+   {
+    "t": "img",
+    "items": [
+     {
+      "src": "images/board/004-mwjm6abf73n.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf1uw.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf5vr.webp"
+     },
+     {
+      "src": "images/board/004-mwjm6abf4jj.webp"
+     }
+    ],
+    "layout": "grid"
+   },
+   {
+    "t": "text",
+    "v": "뽑다보니 또 봉돌안돌까지 뽑아보리고 말았습니다.\n\n\n\n\n\n\n\n\n\n\n\n"
+   },
+   {
+    "t": "img",
+    "items": [
+     {
+      "src": "images/board/004-mwjm6abf16q.webp"
+     }
+    ],
+    "layout": "big"
+   },
+   {
+    "t": "text",
+    "v": "그럼 너굴안전팀을 마지막으로~! 봐주셔서 감사합니구리 🦝🍃"
+   }
+  ],
+  "body": "<p>안녕하세요? 티팟 5k기념 공팀장님 에셋을 뽑아보았는데요</p><p>뽑기 전에 이 아저씨는 어떤 동물을 닮았을까 생각하다가...... 🦝 &lt;&lt; !</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n<figure class=\"gal gal-sq gal-c2\"><img src=\"../images/board/004-mwjm6abf460.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf41u.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf6ld.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf6az.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>뽑다보니 뭔가 동숲 너굴사장이 떠올라서 얼레. 어라라. 하고 옷이랑 넥타이를 나뭇잎처럼...</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n<figure class=\"gal gal-sq gal-c2\"><img src=\"../images/board/004-mwjm6abf26p.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf1zd.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf6lh.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf5bn.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>뽑다보니 뭔가 콩돌밤돌이 떠올랐는데 마침 시현이 봉팔이가 두 마리라서 고런 느낌으로 같이 뽑아보고......</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n<figure class=\"gal gal-sq gal-c3\"><img src=\"../images/board/004-mwjm6abf7mz.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf1dq.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf783.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf74v.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf58o.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf575.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>뽑다보니 또 아예 너굴사장처럼 이것저것 뽑아보다가.........(???)</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n<figure class=\"gal gal-sq gal-c2\"><img src=\"../images/board/004-mwjm6abf73n.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf1uw.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf5vr.webp\" alt=\"\" loading=\"lazy\"><img src=\"../images/board/004-mwjm6abf4jj.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>뽑다보니 또 봉돌안돌까지 뽑아보리고 말았습니다.</p><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div><div class=\"gap\"></div>\n<figure><img src=\"../images/board/004-mwjm6abf16q.webp\" alt=\"\" loading=\"lazy\"></figure>\n<p>그럼 너굴안전팀을 마지막으로~! 봐주셔서 감사합니구리 🦝🍃</p>"
  }
 ];
