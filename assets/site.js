@@ -1,0 +1,202 @@
+/* 현상대응컴퍼니 공식 아카이브 — 사이트 공통 스크립트 */
+(function () {
+  'use strict';
+
+
+  /* 0) 사진·영상 위 우클릭/끌어서 저장 막기 (글은 그대로 복사할 수 있어요. 관리자 화면은 제외) */
+  if (!document.getElementById('adm')) {
+    var guard = 'img, video, .photo, .ph, .s-hero, .rt, .im, .visual, .pfeature';
+    document.addEventListener('contextmenu', function (e) {
+      if (e.target.closest && e.target.closest(guard)) e.preventDefault();
+    });
+    document.addEventListener('dragstart', function (e) {
+      if (e.target && e.target.tagName === 'IMG') e.preventDefault();
+    });
+  }
+
+
+  /* 게시글 사진 크게 보기 (눌러서 확대, 좌우로 넘기기) */
+  (function () {
+    var box = null, list = [], cur = 0, sx = 0;
+    function build() {
+      box = document.createElement('div'); box.className = 's-lb'; box.hidden = true;
+      box.innerHTML = '<button type="button" class="x" aria-label="닫기">✕</button><button type="button" class="p" aria-label="이전">‹</button><img alt=""><button type="button" class="n" aria-label="다음">›</button><span class="c"></span>';
+      document.body.appendChild(box);
+      box.addEventListener('click', function (e) {
+        var t = e.target;
+        if (t.classList.contains('p')) go(-1); else if (t.classList.contains('n')) go(1); else if (t.tagName !== 'IMG') close();
+      });
+      box.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+      box.addEventListener('touchstart', function (e) { sx = e.changedTouches[0].clientX; }, { passive: true });
+      box.addEventListener('touchend', function (e) { var d = e.changedTouches[0].clientX - sx; if (Math.abs(d) > 50) go(d < 0 ? 1 : -1); }, { passive: true });
+      document.addEventListener('keydown', function (e) {
+        if (box.hidden) return;
+        if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') go(-1); else if (e.key === 'ArrowRight') go(1);
+      });
+    }
+    function show() {
+      box.querySelector('img').src = list[cur].currentSrc || list[cur].src;
+      box.querySelector('.c').textContent = list.length > 1 ? (cur + 1) + ' / ' + list.length : '';
+      box.classList.toggle('one', list.length < 2);
+    }
+    function go(d) { cur = (cur + d + list.length) % list.length; show(); }
+    function close() { box.hidden = true; document.body.style.overflow = ''; }
+    document.addEventListener('click', function (e) {
+      var im = e.target; if (!im || im.tagName !== 'IMG') return;
+      var tx = im.closest('.s-post-body .tx'); if (!tx) return;
+      if (!box) build();
+      list = Array.prototype.slice.call(tx.querySelectorAll('img')); cur = Math.max(0, list.indexOf(im));
+      show(); box.hidden = false; document.body.style.overflow = 'hidden';
+    });
+  })();
+
+  /* 1) 목차: 지금 보고 있는 섹션 표시 */
+  var toc = document.querySelector('.s-toc');
+  if (toc) {
+    var links = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var line = window.innerHeight * 0.28;
+      var current = -1;
+      for (var i = 0; i < targets.length; i++) {
+        if (targets[i] && targets[i].offsetParent !== null && targets[i].getBoundingClientRect().top <= line) current = i;
+      }
+      links.forEach(function (a, i) { a.classList.toggle('is-on', i === current); });
+      var on = toc.querySelector('a.is-on');
+      if (on && window.matchMedia('(max-width:1100px)').matches) {
+        var ul = on.closest('ul');
+        if (ul) ul.scrollLeft = on.offsetLeft - ul.clientWidth / 2 + on.clientWidth / 2;
+      }
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  /* 1-b) 프로필 / 인트로 탭 */
+  var tabBar = document.querySelector('.s-tabs');
+  if (tabBar) {
+    var btns = Array.prototype.slice.call(tabBar.querySelectorAll('[data-tab]'));
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.s-tabpanel'));
+    var tocItems = Array.prototype.slice.call(document.querySelectorAll('.s-toc li[data-tab]'));
+    var show = function (name, scroll) {
+      btns.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-tab') === name ? 'true' : 'false'); });
+      panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== name; });
+      tocItems.forEach(function (li) { li.hidden = li.getAttribute('data-tab') !== name; });
+      if (scroll) window.scrollTo({ top: Math.max(0, tabBar.getBoundingClientRect().top + window.pageYOffset - (window.matchMedia("(max-width:1100px)").matches ? 200 : 110)), behavior: 'auto' });
+      window.dispatchEvent(new Event('resize'));
+    };
+    btns.forEach(function (b) { b.addEventListener('click', function () { show(b.getAttribute('data-tab'), true); }); });
+    var fromHash = function () {
+      var id = decodeURIComponent(location.hash.slice(1));
+      var el = id && document.getElementById(id);
+      var p = el && el.closest('.s-tabpanel');
+      if (p) { show(p.getAttribute('data-panel'), false); el.scrollIntoView(); }
+    };
+    window.addEventListener('hashchange', fromHash);
+    show('profile', false);
+    fromHash();
+  }
+
+  /* 2) 게시판 */
+  var CATS = { notice: '공지', lore: '설정', bside: '에셋', chat: '잡담' };
+  var posts = (window.HRC_POSTS || []).filter(function (p) { return !p.hidden; }).sort(function (a, b) {
+    return a.date < b.date ? 1 : a.date > b.date ? -1 : (a.id < b.id ? 1 : -1);
+  });
+
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function fmtDate(d) { return String(d).replace(/-/g, '.'); }
+
+  /* 2-a) 메인 화면의 최근 글 */
+  var latest = document.querySelector('[data-latest]');
+  if (latest) {
+    var base = latest.getAttribute('data-base') || '';
+    var top = posts.slice(0, 4);
+    latest.innerHTML = top.length ? top.map(function (p) {
+      return '<li><a href="' + base + 'board/#p' + esc(p.id) + '">' +
+        '<span><span class="s-tag c-' + esc(p.cat) + '">' + esc(CATS[p.cat] || p.cat) + '</span></span>' +
+        '<span class="t">' + esc(p.title) + '</span>' +
+        '<span class="d">' + fmtDate(p.date) + '</span></a></li>';
+    }).join('') : '<li class="s-empty">아직 등록된 글이 없습니다.</li>';
+  }
+
+  /* 2-b) 게시판 목록 */
+  var board = document.querySelector('[data-board]');
+  if (board) {
+    var html = posts.map(function (p) {
+      var imgs = (p.images || []).map(function (u) {
+        var src = /^(https?:)?\/\//.test(u) ? u : '../images/' + u;
+        return '<img src="' + esc(src) + '" alt="" loading="lazy">';
+      }).join('');
+      var text = p.body || '';
+      if (text.indexOf('<') === -1) {
+        text = text.trim().split(/\n\s*\n/).map(function (para) {
+          return '<p>' + esc(para.trim()).replace(/\n/g, '<br>') + '</p>';
+        }).join('');
+      }
+      return '<div class="s-post" id="p' + esc(p.id) + '" data-cat="' + esc(p.cat) + '">' +
+        '<button type="button" class="s-post-row" aria-expanded="false">' +
+        '<span class="no">' + esc(p.id) + '</span>' +
+        '<span><span class="s-tag c-' + esc(p.cat) + '">' + esc(CATS[p.cat] || p.cat) + '</span></span>' +
+        '<span class="ti">' + esc(p.title) + '</span>' +
+        '<span class="dt">' + fmtDate(p.date) + '</span></button>' +
+        '<div class="s-post-body"><div class="tx">' + text + '</div>' +
+        (imgs ? '<figure>' + imgs + '</figure>' : '') + '</div></div>';
+    }).join('');
+    board.innerHTML = '<div class="s-board-h"><span>번호</span><span>분류</span><span>제목</span><span>작성일</span></div>' +
+      (html || '<div class="s-empty">아직 등록된 글이 없습니다.</div>');
+
+    var open = function (post, yes) {
+      post.classList.toggle('is-open', yes);
+      post.querySelector('.s-post-row').setAttribute('aria-expanded', yes ? 'true' : 'false');
+    };
+    board.addEventListener('click', function (e) {
+      var row = e.target.closest('.s-post-row');
+      if (!row) return;
+      var post = row.parentNode;
+      var willOpen = !post.classList.contains('is-open');
+      open(post, willOpen);
+      if (willOpen && history.replaceState) history.replaceState(null, '', '#' + post.id);
+    });
+
+    var filters = document.querySelectorAll('[data-filter]');
+    Array.prototype.forEach.call(filters, function (b) {
+      b.addEventListener('click', function () {
+        var f = b.getAttribute('data-filter');
+        Array.prototype.forEach.call(filters, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        Array.prototype.forEach.call(board.querySelectorAll('.s-post'), function (p) {
+          p.classList.toggle('s-hidden', f !== 'all' && p.getAttribute('data-cat') !== f);
+        });
+      });
+    });
+
+    /* 주소에 #p001 처럼 붙어 있으면 그 글을 바로 열기 */
+    var openFromHash = function () {
+      var id = location.hash.slice(1);
+      var el = id && document.getElementById(id);
+      if (el && el.classList.contains('s-post')) {
+        open(el, true);
+        el.scrollIntoView({ block: 'start' });
+      }
+    };
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+  }
+
+  /* 3) 소개글 안의 인원 카드를 눌렀을 때 이동 (링크가 걸린 카드만) */
+  Array.prototype.forEach.call(document.querySelectorAll('.cm.s-linked'), function (c) {
+    c.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return;
+      var a = c.querySelector('.s-cover');
+      if (a) a.click();
+    });
+  });
+})();
